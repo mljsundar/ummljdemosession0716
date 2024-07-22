@@ -16,8 +16,10 @@ private class TruckAutomationsTest {
     @isTest static void testDefaultSite(){
         Account acc = new Account(Name = 'My Test Account');
         insert acc;
-        acc = TruckAutomations.setDefaultSite(acc);
-        System.assertEquals('Single location', acc.Site, 'Default Site is Single location');
+        acc = TruckAutomations.setDefaultBillingAddress(acc);
+        System.assertEquals('Basauri, 6', acc.BillingStreet, 'Default BillingStreet is Basauri, 6');
+        System.assertEquals('Madrid', acc.BillingState, 'Default BillingState is Madrid');
+        System.assertEquals('28023', acc.BillingPostalCode, 'Default BillingPostalCode is 28023');
     }
 
     @isTest static void testDefaultShippingAddress(){
